@@ -32,9 +32,9 @@ const merge = (leftArray, rightArray) => {
 };
 
 function binarySearch(array, target) {
-  const mid = Math.ceil(array.length / 2);
+  const mid = Math.floor(array.length / 2);
 
-  if (target === array[mid] || target === array[0]) return true;
+  if (target === array[mid]) return true;
   if (target < array[mid]) {
     return binarySearch(array.slice(0, mid), target);
   }
@@ -45,4 +45,4 @@ function binarySearch(array, target) {
 }
 const sortedArray = mergeSort([88, 172, 16, 77, 7, 9]);
 // console.log(binarySearch(sortedArray, 4)); // Not found.
-console.log(binarySearch(sortedArray, 172)); // Found.
+console.log(binarySearch(sortedArray, 7)); // Found.
